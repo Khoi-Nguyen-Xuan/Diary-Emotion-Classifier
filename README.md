@@ -1,10 +1,10 @@
 
 
-<H1> 📖 Vietnamese Diary Emotion Classifier ✨ </H1>
+<H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>
 
-<h2> Introduction</h2>
+<h2> ✨ Introduction</h2>
 
-Welcome to the Vietnamese Diary Emotion Classifier (VDEC) project! This project is dedicated to developing a mobile diary application that harnesses the power of Deep Learning to classify emotions expressed in users' diary entries. Our goal is to provide users with insights into their emotional well-being by analyzing the text they write, as well as providing them a statistical summary of their emotion on a monthly basis.
+Welcome to the Vietnamese Diary Emotion Classifier (VDEC) project! Our project is dedicated to developing a mobile diary application that harnesses the power of Deep Learning to classify emotions expressed in users' diary entries. Our goal is to provide users with insights into their emotional well-being by analyzing the text they write, as well as providing them a statistical summary of their emotion on a monthly basis.
 
 
 <h2> 🎯 Objectives</h2>
@@ -20,7 +20,7 @@ There are 4 main objectives in our projects:
 <h2> 🗂️ Dataset </h2>
 Our dataset can be found at: <a href="https://readme.com/](https://github.com/Khoi-Nguyen-Xuan/Diary-Emotion-Classifier/blob/main/250_RAW_DATASET.csv" target="_blank">Vietnamese diaries dataset</a>
 
-- As mentioned in Objectives, our project is unable to find any available Vietnamese emotion-labeled diary dataset, we decide to self-generate a dataset of 250 Vietnamese diaries with emotions being labeled. 
+- As mentioned, our team is unable to find any available Vietnamese emotion-labeled diary dataset, we decide to self-generate a dataset of 250 Vietnamese diaries with emotions being labeled. 
 - At the moment, there are 5 emotions being labeled : Happy, Sad, Suprise, Bored, and Angry, with 50 data for each emotion. 
 - The word count for each entry ranges from 200 to 500 words. Our dataset showcases a variety of writing styles and tones, from professional adults to young teenagers. The topics covered in the our diaries are diverse, including different themes like school, family, and even relationships.
 
@@ -98,9 +98,9 @@ i =0
 
 for sentence in tokenized:
   diff = max_len_to_padding - sentence.shape[1]
-  padding_tensor = IhateNumpy.zeros((diff))
+  padding_tensor = np.zeros((diff))
 
-  padded_sentence = IhateNumpy.hstack((sentence.squeeze(), padding_tensor))
+  padded_sentence = np.hstack((sentence.squeeze(), padding_tensor))
 
   padded.append(padded_sentence)
 
