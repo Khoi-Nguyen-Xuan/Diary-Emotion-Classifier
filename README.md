@@ -1,6 +1,7 @@
 
 
-<H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>
+<H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>![Uploading Screenshot 2025-01-23 at 9.45.49 PM.png…]()
+
 
 <h2> ✨ Introduction</h2>
 
@@ -171,14 +172,17 @@ class MultiClassFNNModel(nn.Module):
 ```
 
 <h2> 🎉 Result </h2> 
-
-![image](https://github.com/user-attachments/assets/895e61dc-5472-4ac1-9d1a-19b1f625c304)
-
 <ul>
  <li> High accuracy for most classes: Most predictions are correctly classified, especially for "Bored," "Sad," and "Surprise," with no misclassifications </li>
  </li>Minor confusion: "Happy" shows slight confusion with "Neutral," and "Angry" is often confused as "Bored."</li> 
  <li> Accuracy: 92.75% on validation dataset </li> 
 </ul>
+
+<ul> Here is the confusion matrix on the validation dataset </ul> 
+![image](https://github.com/user-attachments/assets/895e61dc-5472-4ac1-9d1a-19b1f625c304)
+
+<ul> Here is the report table on the validation dataset </ul> 
+<img width="479" alt="Screenshot 2025-01-23 at 9 46 04 PM" src="https://github.com/user-attachments/assets/1d7e7a7b-ac07-42e9-a1ab-ad6e66734ea6" />
 
 
 
