@@ -117,10 +117,8 @@ df["Padded"] = padded
 <h2> ⚙️ Model structure </h2> 
 
 <ul>
-  <li>Here is the structure of the classification model that we are using </li>
   <li>Our model is simply a fully connected feedforward neural network (FNN) with four linear layers. The final output layer (fc4) outputs logits for use with CrossEntropyLoss. </li>
-  <li>Our model is simply a fully connected feedforward neural network (FNN) with four linear layers. The final output layer (fc4) outputs logits for use with CrossEntropyLoss. </li>
-  <li> We also use dropout layer combined with a batch normalization to stabilise the training process </li>
+  <li> We also use Dropout layer combined with a Batch Normalization to stabilise the training process </li>
   <li> The activation function is ReLU (Rectified Linear Unit) </li>
 </ul>
 
