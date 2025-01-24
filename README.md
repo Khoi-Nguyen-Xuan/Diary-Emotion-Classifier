@@ -1,6 +1,5 @@
 
-
-<H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>![Uploading Screenshot 2025-01-23 at 9.45.49 PM.png…]()
+<H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>
 
 
 <h2> ✨ Introduction</h2>
