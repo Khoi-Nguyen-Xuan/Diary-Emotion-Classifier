@@ -114,6 +114,60 @@ df["Padded"] = padded
 ```
 
 
+<h2> ⚙️ Model structure </h2> 
+
+<ul>
+  <li>Here is the structure of the classification model that we are using </li>
+</ul>
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+import numpy as np
+import pandas as pd
+
+# Define the model architecture
+class MultiClassFNNModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super(MultiClassFNNModel, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.bn1 = nn.BatchNorm1d(hidden_dim)
+        self.relu = nn.ReLU()
+        self.dropout1 = nn.Dropout(p=0.3)
+
+        self.fc2 = nn.Linear(hidden_dim, hidden_dim)
+        self.bn2 = nn.BatchNorm1d(hidden_dim)
+        self.dropout2 = nn.Dropout(p=0.3)
+
+        self.fc3 = nn.Linear(hidden_dim, hidden_dim)
+        self.bn3 = nn.BatchNorm1d(hidden_dim)
+        self.dropout3 = nn.Dropout(p=0.3)
+
+        self.fc4 = nn.Linear(hidden_dim, output_dim)  # Output logits directly
+
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.dropout1(x)
+
+        x = self.fc2(x)
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.dropout2(x)
+
+        x = self.fc3(x)
+        x = self.bn3(x)
+        x = self.relu(x)
+        x = self.dropout3(x)
+
+        x = self.fc4(x)  # Logits for CrossEntropyLoss
+        return x
+
+```
+
 
 
 
