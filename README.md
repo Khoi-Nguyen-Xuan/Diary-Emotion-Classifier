@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/3ae28af1-c5c8-4905-97c3-196226497828)
 
 <H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>
 
@@ -120,6 +120,64 @@ df["Padded"] = padded
   <li>Our model is simply a fully connected feedforward neural network (FNN) with four linear layers. The final output layer (fc4) outputs logits for use with CrossEntropyLoss. </li>
   <li> We also use Dropout layer combined with a Batch Normalization to stabilise the training process </li>
   <li> The activation function is ReLU (Rectified Linear Unit) </li>
+</ul>
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+import numpy as np
+import pandas as pd
+
+# Define the model architecture
+class MultiClassFNNModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super(MultiClassFNNModel, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.bn1 = nn.BatchNorm1d(hidden_dim)
+        self.relu = nn.ReLU()
+        self.dropout1 = nn.Dropout(p=0.3)
+
+        self.fc2 = nn.Linear(hidden_dim, hidden_dim)
+        self.bn2 = nn.BatchNorm1d(hidden_dim)
+        self.dropout2 = nn.Dropout(p=0.3)
+
+        self.fc3 = nn.Linear(hidden_dim, hidden_dim)
+        self.bn3 = nn.BatchNorm1d(hidden_dim)
+        self.dropout3 = nn.Dropout(p=0.3)
+
+        self.fc4 = nn.Linear(hidden_dim, output_dim)  # Output logits directly
+
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.dropout1(x)
+
+        x = self.fc2(x)
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.dropout2(x)
+
+        x = self.fc3(x)
+        x = self.bn3(x)
+        x = self.relu(x)
+        x = self.dropout3(x)
+
+        x = self.fc4(x)  # Logits for CrossEntropyLoss
+        return x
+
+```
+
+<h2> 🎉 Result </h2> 
+
+![image](https://github.com/user-attachments/assets/895e61dc-5472-4ac1-9d1a-19b1f625c304)
+
+<ul>
+ <li> High accuracy for most classes: Most predictions are correctly classified, especially for "Bored," "Sad," and "Surprise," with no misclassifications </li>
+ </li>Minor confusion: "Happy" shows slight confusion with "Neutral," and "Angry" is often confused as "Bored."</li> 
+ <li> Accuracy: 92.75% on validation dataset </li> 
 </ul>
 
 ```python
