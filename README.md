@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3ae28af1-c5c8-4905-97c3-196226497828)
+
 
 <H1> 📖 Vietnamese Diary Emotion Classifier 🇻🇳 </H1>
 
