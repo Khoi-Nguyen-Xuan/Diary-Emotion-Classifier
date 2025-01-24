@@ -179,11 +179,12 @@ class MultiClassFNNModel(nn.Module):
 </ul>
 
 <ul> Here is the confusion matrix on the validation dataset </ul> 
-![image](https://github.com/user-attachments/assets/895e61dc-5472-4ac1-9d1a-19b1f625c304)
+
+![image](https://github.com/user-attachments/assets/cb6b823f-5ff4-4239-ae91-be72fbfe78b4)
 
 <ul> Here is the report table on the validation dataset </ul> 
-<img width="479" alt="Screenshot 2025-01-23 at 9 46 04 PM" src="https://github.com/user-attachments/assets/1d7e7a7b-ac07-42e9-a1ab-ad6e66734ea6" />
 
+<img width="461" alt="Screenshot 2025-01-23 at 9 47 42 PM" src="https://github.com/user-attachments/assets/04597ea1-b1b6-4aac-8533-470c0eceef0e" />
 
 
 
